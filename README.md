@@ -1,17 +1,19 @@
-Now, let’s see how to increase the swap file. First thing first, make sure that you have a swap file in your system.
+Now, let’s see how to increase the swap file. First thing first, make sure that you have a swap file in your system.  
 
-swapon --show
-It will show the current swap available. If you see the type file, it indicates that you are using a swap file.
+swapon --show  
 
-swapon --show
+It will show the current swap available. If you see the type file, it indicates that you are using a swap file.  
+
+swapon --show  
 NAME      TYPE SIZE USED PRIO
-/swapfile file   2G   0B   -2
+/swapfile file   2G   0B   -2  
+
 Now before you resize the swap file, you should turn the swap off. You should also make sure that you have enough free RAM available to take the data from swap file. Otherwise, create a temporary swap file.
 
-You can disable a given swap file using this command. The command doesn’t produce any output and it may take a few minutes to complete:
+You can disable a given swap file using this command. The command doesn’t produce any output and it may take a few minutes to complete:  
 
-sudo swapoff /swapfile
-Now use the fallocate command in Linux to change the size of the swap file.
+sudo swapoff /swapfile  
+Now use the fallocate command in Linux to change the size of the swap file.  
 
 sudo fallocate -l 4G /swapfile
 Make sure that you mark this file as swap file:
